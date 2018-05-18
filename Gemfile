@@ -59,6 +59,9 @@ group :development do
 end
 
 
+# Security Safebox (protect keys before pushing online)
+gem 'figaro'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

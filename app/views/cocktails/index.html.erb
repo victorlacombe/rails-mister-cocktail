@@ -1,19 +1,15 @@
 <h1>Our increadible cocktails</h1>
 <div class="container">
-  <ul>
     <div class="row">
       <% @cocktails.each do |cocktail|  %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="card">
-            <li style="list-style: none">
               <h2><%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzzXKdKmUv-HTCr2Wdkw1Bf3-slbWHIrCPtafntc0sKliQukvCrA"), cocktail_path(cocktail)%>
               </h2>
               <p><%= link_to cocktail.name, cocktail_path(cocktail), class: 'card-category' %></p>
               <p><%= link_to "Add a dose", new_cocktail_dose_path(cocktail), class: 'card-description' %></p>
-            </li>
           </div>
         </div>
       <% end %>
     </div>
-  </ul>
 </div>
