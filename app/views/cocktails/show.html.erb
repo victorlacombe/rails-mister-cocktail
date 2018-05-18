@@ -1,2 +1,14 @@
 <h1><%= @cocktail.name %></h1>
-<%= link_to "Back to Cocktail Land", cocktails_path %>
+
+<% unless @cocktail.doses.empty? %>
+  <h2>Ingredients</h2>
+  <% @cocktail.doses.each do |dose| %>
+    <span>Description: <%= dose.description %></span>
+    <span>Ingredient: <%= dose.ingredient.name %></span>
+    <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete  %>
+    <br>
+  <% end %>
+<% end %>
+
+<%= link_to "Add doses to this cocktail!", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+<%= link_to "Back to our increadible Cocktails", cocktails_path, class: "btn btn-warning" %>
