@@ -1,5 +1,7 @@
 <h1><%= @cocktail.name %></h1>
-
+<div class="cocktail-image">
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+</div>
 <% unless @cocktail.doses.empty? %>
   <h2>Ingredients</h2>
   <% @cocktail.doses.each do |dose| %>
@@ -10,5 +12,7 @@
   <% end %>
 <% end %>
 
-<%= link_to "Add doses to this cocktail!", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
-<%= link_to "Back to our increadible Cocktails", cocktails_path, class: "btn btn-warning" %>
+<div class="cocktail-buttons">
+  <%= link_to "Add doses to this cocktail!", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+  <%= link_to "Back to our increadible Cocktails", cocktails_path, class: "btn btn-warning" %>
+</div>
