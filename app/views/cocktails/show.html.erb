@@ -12,7 +12,7 @@
   <% end %>
 <% end %>
 
-<div class="cocktail-buttons">
-  <%= link_to "Add doses to this cocktail!", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
-  <%= link_to "Back to our increadible Cocktails", cocktails_path, class: "btn btn-warning" %>
+<div class="cocktail-buttons list-inline center">
+  <%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+  <%= link_to "Back to our cocktails", cocktails_path, class: "btn btn-warning" %>
 </div>
